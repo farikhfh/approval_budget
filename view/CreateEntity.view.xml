@@ -1,0 +1,106 @@
+<mvc:View xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m" xmlns:semantic="sap.m.semantic" xmlns:f="sap.ui.layout.form" controllerName="ZAPPRCHBUDGET2.controller.CreateEntity" height="100%">
+<semantic:DetailPage id="page" navButtonPress="onNavBack" title="{viewModel>/viewTitle}" busy="{viewModel>/busy}">
+
+<Table
+				id="tabless"
+				selectionMode="None"
+				rows="{path: '/detaibudgetSet'}"
+				visibleRowCount="10"
+				enableCellFilter="{ui>/cellFilterOn}"
+				filter="name"
+				ariaLabelledBy="title">
+				<!--<toolbar>-->
+				<!--	<m:OverflowToolbar>-->
+				<!--		<m:Title id="title" text=".:Detail WBS Element:."></m:Title>-->
+				<!--		<m:ToolbarSpacer/>-->
+				<!--		<m:ToolbarSeparator/>-->
+				<!--		<m:SearchField-->
+				<!--			placeholder="Filter"-->
+				<!--			value="{ui>/globalFilter}"-->
+				<!--			search="filterGlobally"-->
+				<!--			width="15rem"/>-->
+				<!--	</m:OverflowToolbar>-->
+				<!--</toolbar>-->
+				<columns>
+					<Column
+						width="10rem"
+						filterProperty="Name">
+						<m:Label text="WBS Element" />
+						<template>
+							<m:Text text="{Posid}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						width="13rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Description" />
+						<template>
+							<m:Text text="{Post1}" wrapping="true" />
+						</template>
+					</Column>
+					<Column
+						width="4rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Curr" />
+						<template>
+							<m:Text text="{Waers}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						width="8rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Original Budget" />
+						<template>
+							<m:Text text="{Oribudget}" wrapping="false" />
+						</template>
+					</Column>					
+					<Column
+						width="8rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Original Budget Edit" />
+						<template>
+							<m:Text text="{OribudgetEdit}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						width="8rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Release Budget" />
+						<template>
+							<m:Text text="{Relbudget}" wrapping="false" />
+						</template>
+					</Column>					
+					<Column
+						width="8rem"
+						filterProperty="Description"
+						defaultFilterOperator="StartsWith">
+						<m:Label text="Release Budget Edit" />
+						<template>
+							<m:Text text="{RelbudgetEdit}" wrapping="false" />
+						</template>
+					</Column>
+				</columns>
+				<footer>
+					<m:OverflowToolbar>
+						<m:ToolbarSpacer/>
+						<m:Button
+							icon="sap-icon://hint"
+							tooltip="Show information"
+							press="showInfo"/>
+					</m:OverflowToolbar>
+				</footer>
+			</Table>
+		<!--<semantic:saveAction>-->
+		<!--	<semantic:SaveAction id="save" enabled="{viewModel>/enableCreate}" press="onSave"/>-->
+		<!--</semantic:saveAction>-->
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"/>
+		</semantic:cancelAction>
+		
+</semantic:DetailPage>
+</mvc:View>

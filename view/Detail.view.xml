@@ -1,0 +1,134 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:micro="sap.suite.ui.microchart"
+	xmlns:xx="sap.suite.ui.microchart" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:u="sap.ui.unified"
+	controllerName="ZAPPRCHBUDGET2.controller.Detail">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<!--<Image width="140px" height="140px" id="__image0" src="https://www.ptpp.co.id/files/thumb/3dbd9faa13b4b2270765329ea4533bf0.jpg/377/219/fit" mode="Background" backgroundPosition="center"/>-->
+			<!--<Image width="140px" height="140px" id="__image2" src="https://www.ptpp.co.id/files/thumb/d1619c40b51f4c331826928c94b315ca.jpg/377/219/fit" mode="Background"/>-->
+			<ObjectHeader id="objectHeader" title="{Pspid}-{Post1}" intro="{Updid}-{Gjahr}" number="{Spart}" numberUnit="{Ctgbudget}-{Budat}"
+				backgroundDesign="Solid" numberState="{= ${Icon} !== '' ? 'Success' : 'Error' }">
+				<!--<additionalNumbers>-->
+				<!--    <ObjectNumber number="Pfc : {Progress}" unit="Percent" id="__number0" textAlign="Center" state="Warning"/>-->
+				<!--</additionalNumbers>-->
+				<attributes>
+					<ObjectAttribute text="{Spart} - {VtwegT}" id="__attribute9" title="Divisi"/>
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="Information" text="Information">
+						<content>
+							<layout:Grid defaultSpan="XL6 L5 M6 S12">
+								<FlexBox id="chartContainer2" renderType="Bare" class="sapUiSmallMargin" width="100%" height="50%">
+									<items>
+										<core:Fragment xmlns:core="sap.ui.core" fragmentName="ZAPPRCHBUDGET2.view.DetailInformation" type="XML" id="__label2"/>
+										<!--<xx:RadialMicroChart valueColor="Error" size="Responsive" percentage="54.000" press="press"></xx:RadialMicroChart>-->
+									</items>
+								</FlexBox>
+								<FlexBox id="chartContainer" renderType="Bare" class="sapUiSmallMargin" width="50%" height="50%">
+									<Image src="{Linkimage1}" height="220px" width="320px">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+									</Image>
+									<!--	<items>-->
+									<!--		<Carousel class="sapUiContentPadding" loop="true" height="200px" width="200%">-->
+									<!--			<pages>-->
+									<!--				<Image src="{Linkimage1}" alt="Example picture of speakers"/>-->
+									<!--				<Image src="{Linkimage2}" alt="Example picture of speakers"/>-->
+									<!--				<Image src="{Linkimage3}" alt="Example picture of speakers"/>-->
+									<!--				<Image src="https://www.ptpp.co.id/files/thumb/d1619c40b51f4c331826928c94b315ca.jpg/377/219/fit" alt="Example picture of USB flash drive"/>-->
+									<!--				<Image src="https://i.ibb.co/mFMbbzx/pp-project-21.jpg" alt="sExample picture of USB flash drive"/>-->
+									<!--				<Image src="https://drive.google.com/drive/folders/1RAkHnUVKR6kk2gdL71SzvTZnK_Q6BW_n" alt="sExample picture of USB flash drive"/>-->
+									<!--			</pages>-->
+									<!--		</Carousel>-->
+									<!--	</items>-->
+								</FlexBox>
+							</layout:Grid>
+							<core:Fragment xmlns:core="sap.ui.core" fragmentName="ZAPPRCHBUDGET2.view.DetailInformation2" type="XML" id="__label0"/>
+							<core:Fragment xmlns:core="sap.ui.core" fragmentName="ZAPPRCHBUDGET2.view.TableSummary" type="XML" id="TableSummary"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id='iconTabBarFilter2' icon="sap-icon://attachment" tooltip="Attachment" text="Attachment">
+						<content>
+							<Label text="Upload Bukti Approval" required="true"/>
+							<u:FileUploader change="onAttachmentUpload" id="idApprImage" required="true" name="apprimage" tooltip="JPG / PNG"
+								uploadComplete="handleUploadComplete" visible="true" typeMissmatch="onTypeMissMatchUpload" fileType="jpg,jpeg,png" maximumFileSize="25"
+								uploadUrl="upload/" fileSizeExceed="onFileSizeExceed" placeholder="JPG Max 25mb"/>
+							<Image id="image1" width="140px" height="140px"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://employee-approvals" tooltip="Log Approval" text="Log Approval">
+						<content>
+							<Table id="LogApproval" inset="false" items="{ path: '/logapprovalSet', sorter: { path: 'Seq' } }">
+								<infoToolbar>
+									<OverflowToolbar>
+										<Label text="List Log Approval Pengajuan Perubahan Budget Nomor {Updid}"/>
+									</OverflowToolbar>
+								</infoToolbar>
+								<columns>
+									<Column width="3em">
+										<Text text="No"/>
+									</Column>
+									<Column>
+										<Text text="Approval(Username)"/>
+									</Column>
+									<Column>
+										<Text text="Action"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Action Date"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Action Time"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Alasan"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{Seq}"/>
+											<Text text="{Uname}"/>
+											<Text text="{Action}"/>
+											<Text text="{Actdate}"/>
+											<Text text="{Acttime}"/>
+											<Text text="{Reasonaction}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:editAction>
+			<semantic:EditAction id="edit" press="onEdit" visible="false"/>
+		</semantic:editAction>
+		<!--<semantic:customFooterContent>-->
+		<!--	<Button enabled="true" id="deleteButton" press="onDelete" text="Delete"/>-->
+		<!--</semantic:customFooterContent>-->
+		<!--<semantic:sendEmailAction>-->
+		<!--	<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>-->
+		<!--</semantic:sendEmailAction>-->
+		<!--<semantic:shareInJamAction>-->
+		<!--	<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>-->
+		<!--</semantic:shareInJamAction>-->
+		<!--<semantic:saveAsTileAction>-->
+		<!--	<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>-->
+		<!--</semantic:saveAsTileAction>-->
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="{= ${Actionrole} ==='B' ? 'Check':'Approve'}" id="Action" press="onApprove"
+				visible="{= ${Icon} !== '' ? false : true }"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Reject" id="actionreject" press="onReject" visible="{Unhidereject}"/>
+		</semantic:negativeAction>
+		<semantic:mainAction>
+			<semantic:MainAction text="Detail" id="__action2" press="onEdit"/>
+		</semantic:mainAction>
+	</semantic:DetailPage>
+</mvc:View>

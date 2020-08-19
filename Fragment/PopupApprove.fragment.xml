@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	
+	
+   <Dialog id="helloDialog" class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer" title="Catatan Approver Pengajuan Budget">
+   		<!--<Label text="Alasan Menolak Pengajuan Budget :" labelFor="input-b" design="Bold" />-->
+		<Input id="reasonapprove" value="{ReasonApprove}" maxLength="200"/>
+		
+		<Button type="Reject" text="Cancel" press="onApproveCancel" id="save" ariaDescribedBy="acceptButtonDescription "/>
+		<Button type="Accept" text="Send" press="onApproveOk" id="cancel" ariaDescribedBy="rejectButtonDescription "/>
+		
+   </Dialog>
+</core:FragmentDefinition>

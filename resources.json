@@ -1,0 +1,118 @@
+{
+    "resources": [
+        {
+            "name": "Fragment/PopupApprove.fragment.xml"
+        },
+        {
+            "name": "Fragment/PopupCancel.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/DetailInformation2.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/DetailObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/CreateEntity.view.xml"
+        },
+        {
+            "name": "view/ViewSettingsDialog.fragment.xml"
+        },
+        {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "view/Master.view.xml"
+        },
+        {
+            "name": "view/DetailTable.fragment.xml"
+        },
+        {
+            "name": "view/DetailNoObjectsAvailable.view.xml"
+        },
+        {
+            "name": "view/TableSummary.fragment.xml"
+        },
+        {
+            "name": "view/DetailInformation.fragment.xml"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/GroupSortState.js"
+        },
+        {
+            "name": "localService/ZGW_APPRCHBUDGET_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "controller/Detail.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/CreateEntity.controller.js"
+        },
+        {
+            "name": "controller/Master.controller.js"
+        },
+        {
+            "name": "controller/ListSelector.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "Component.js"
+        }
+    ]
+}

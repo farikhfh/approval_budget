@@ -1,0 +1,73 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core">
+	<Table xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="idProductsTable" inset="false">
+		<infoToolbar>
+			<OverflowToolbar>
+				<Label text="Summary Change Budget"/>
+			</OverflowToolbar>
+		</infoToolbar>
+		<columns>
+			<Column width="6em">
+				<Text text="Kategori"/>
+			</Column>
+			<Column hAlign="End">
+				<Text text="Data Lama"/>
+			</Column>
+			<Column hAlign="End">
+				<Text text="Data Baru"/>
+				<!--<Text text="Data Lama"/>-->
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier title="Cost Planning Total"/>
+					<Text text="{CostplanEdit}" />
+					<Text text="{Costplan}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectStatus class="sapUiSmallMarginBottom" text="Original Total Z"  state="{= ${OriTotalzReal} !== ${OriTotalz} ? 'Error' : 'None' }"/>
+					<Text text="{OriTotalzReal}"/>
+					<Text text="{OriTotalz}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectStatus class="sapUiSmallMarginBottom" text="Original Total NonZ" state="{= ${OriTotalnonzReal} !== ${OriTotalnonz} ? 'Error' : 'None' }"/>
+					<Text text="{OriTotalnonzReal}"/>
+					<Text text="{OriTotalnonz}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier title="Original Budget Total"/>
+					<!--<ObjectIdentifier text="Original Budget Total"/>-->
+					<Text text="{OriTotalAllReal}"/>
+					<Text text="{OriTotalAll}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectStatus class="sapUiSmallMarginBottom" text="Release Total Z" state="{= ${RelTotalzReal} !== ${RelTotalz} ? 'Error' : 'None' }"/>
+					<Text text="{RelTotalzReal}"/>
+					<Text text="{RelTotalz}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectStatus class="sapUiSmallMarginBottom" text="Release Total NonZ" state="{= ${RelTotalnonzReal} !== ${RelTotalnonz} ? 'Error' : 'None' }"/>
+					<Text text="{RelTotalnonzReal}"/>
+					<Text text="{RelTotalnonz}"/>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier title="Release Budget Total"/>
+					<Text text="{RelTotalAllReal}"/>
+					<Text text="{RelTotalAll}"/>
+				</cells>
+			</ColumnListItem>			
+		</items>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,132 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<!--<VBox class="sapUiSmallMargin">-->
+	<!--	<f:Form id="FormDisplay354" editable="false">-->
+	<!--		<f:title>-->
+	<!--			<core:Title text="Informasi Proyek" />-->
+	<!--		</f:title>-->
+	<!--		<f:layout>-->
+	<!--			<f:ResponsiveGridLayout-->
+	<!--				labelSpanXL="3"	labelSpanL="3" labelSpanM="3"	labelSpanS="12"	adjustLabelSpan="false"-->
+	<!--				emptySpanXL="4"	emptySpanL="4"	emptySpanM="4"	emptySpanS="0"-->
+	<!--				columnsXL="1"	columnsL="1"-->
+	<!--				columnsM="1"	singleContainerFullSize="false" />-->
+	<!--		</f:layout>-->
+	<!--		<f:formContainers>-->
+	<!--			<f:FormContainer>-->
+	<!--					<f:FormElement label="Divisi">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Spart}" id="spart" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>						-->
+	<!--					<f:FormElement label="Profit Center">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Prctr}-{Prctrt}" id="nameText"  />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Currency">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Waers}" id="currency" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+						
+	<!--					<f:FormElement label="Category Budget">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Ctgbudget}" id="Ctgbudget"  />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Category Change Budget">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Ctgchbudget}" id="Ctgchbudget"  />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Category Request Update">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Ctgrequpdt} ( {Ctgrequpd} )" id="Ctgrequpd"  />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+						
+	<!--					<f:FormElement label="Progress">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Progress} %" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Deskripsi">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Reason}" id="reason1" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Alasan Perubahan">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Reason2}" id="reason2" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--					<f:FormElement label="Potensi Efisiensi WBS 100%">-->
+	<!--						<f:fields>-->
+	<!--							<Text text="{Potensiefisiensi}" id="potensiefisiensi" />-->
+								<!--<Text text="{Potensiefisiensi}" id="po2" />-->
+	<!--						</f:fields>-->
+	<!--					</f:FormElement>-->
+	<!--			</f:FormContainer>-->
+	<!--		</f:formContainers>-->
+	<!--	</f:Form>-->
+	<!--</VBox>-->
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplay3" editable="false">
+			<f:title>
+				<core:Title text="Indikasi Perubahan PFCk"/>
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+						<f:FormElement label="RAP Awal HP 0%">
+							<f:fields>
+								<Text text="{Pfc0percentage} %" id="pfc0percentage"/>
+								<Text text="{Pfc0}" id="pfc0"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="PFC Sebelum Update">
+							<f:fields>
+								<Text text="{Pfc} %" id="pfc2"/>
+								<Text text="{OriTotalAllReal}" id="nilaipfc"/>
+							</f:fields>
+						</f:FormElement>						
+						<f:FormElement label="PFCK">
+							<f:fields>
+								<Text text="{Pfck} %" id="pfck2"/>
+								<Text text="{OriTotalAll}" id="nilaipfck"/>
+							</f:fields>
+						</f:FormElement>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplay2" editable="false">
+			<f:title>
+				<core:Title text="Deviasi Budget"/>
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+						<f:FormElement label="Budget Original">
+							<f:fields>
+								<Text text="{OriBalanced}" id="totrelawalREAL"/>
+							</f:fields>
+						</f:FormElement>						
+						<f:FormElement label="Budget Release">
+							<f:fields>
+								<Text text="{RelBalanced}" id="totrelawalPLAN"/>
+							</f:fields>
+						</f:FormElement>
+				</f:FormContainer>
+			</f:formContainers>
+		<f:customData>
+		    <core:CustomData key="w5g.dt.editable" value="false" id="__data2"/>
+		</f:customData>
+		</f:Form>
+	</VBox>
+</core:FragmentDefinition>
